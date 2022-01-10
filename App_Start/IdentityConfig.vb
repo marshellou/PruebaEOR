@@ -44,10 +44,10 @@ Public Class ApplicationUserManager
         ' Configure la lógica de validación de contraseñas
         manager.PasswordValidator = New PasswordValidator With {
             .RequiredLength = 6,
-            .RequireNonLetterOrDigit = True,
-            .RequireDigit = True,
-            .RequireLowercase = True,
-            .RequireUppercase = True
+            .RequireNonLetterOrDigit = False,
+            .RequireDigit = False,
+            .RequireLowercase = False,
+            .RequireUppercase = False
         }
 
         ' Configurar valores predeterminados para bloqueo de usuario

@@ -14,6 +14,12 @@ End Code
                 <hr />
                 @Html.ValidationSummary(True, "", New With {.class = "text-danger"})
                 <div class="form-group">
+                    @Html.LabelFor(Function(m) m.NombreUsuario, New With {.class = "col-md-2 control-label"})
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(Function(m) m.NombreUsuario, New With {.class = "form-control"})                        
+                    </div>
+                </div>
+                <div class="form-group">
                     @Html.LabelFor(Function(m) m.Email, New With {.class = "col-md-2 control-label"})
                     <div class="col-md-10">
                         @Html.TextBoxFor(Function(m) m.Email, New With {.class = "form-control"})
@@ -51,11 +57,11 @@ End Code
             End Using
         </section>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <section id="socialLoginForm">
             @Html.Partial("_ExternalLoginsListPartial", New ExternalLoginListViewModel With {.ReturnUrl = ViewBag.ReturnUrl})
         </section>
-    </div>
+    </div>*@
 </div>
 @Section Scripts
     @Scripts.Render("~/bundles/jqueryval")

@@ -40,6 +40,11 @@ Public Class ForgotViewModel
 End Class
 
 Public Class LoginViewModel
+
+    <Required>
+    <Display(Name:="Nombre de Usuario")>
+    Public Property NombreUsuario As String
+
     <Required>
     <Display(Name:="Correo electrónico")>
     <EmailAddress>
@@ -55,6 +60,12 @@ Public Class LoginViewModel
 End Class
 
 Public Class RegisterViewModel
+
+    <Required>
+    <Display(Name:="Nombre de Usuario")>
+    Public Property NombreUsuario As String
+
+
     <Required>
     <EmailAddress>
     <Display(Name:="Correo electrónico")>

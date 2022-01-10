@@ -58,7 +58,7 @@ Public Class AccountController
 
         ' No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
         ' Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout := True
-        Dim result = Await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout := False)
+        Dim result = Await SignInManager.PasswordSignInAsync(model.NombreUsuario, model.Password, model.RememberMe, shouldLockout:=False)
         Select Case result
             Case SignInStatus.Success
                 Return RedirectToLocal(returnUrl)
@@ -131,7 +131,7 @@ Public Class AccountController
     Public Async Function Register(model As RegisterViewModel) As Task(Of ActionResult)
         If ModelState.IsValid Then
             Dim user = New ApplicationUser() With {
-                .UserName = model.Email,
+                .UserName = model.NombreUsuario,
                 .Email = model.Email
             }
             Dim result = Await UserManager.CreateAsync(user, model.Password)
